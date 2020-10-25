@@ -252,7 +252,7 @@ async function getWeather() {
             weatherIconSmall.className = 'weather-icon-small owf owf-5x';
             weatherIconBig.classList.add(`owf-${data.weather[0].id}`);
             weatherIconSmall.classList.add(`owf-${data.weather[0].id}`);
-            temperature.textContent = 'Температура: ' + `${data.main.temp}°C`;
+            temperature.textContent = 'Температура: ' + `${data.main.temp.toFixed()}°C`;
             weatherHumidity.textContent = `Влажность: ${data.main.humidity}%`;
             weatherWind.textContent = `Скорость ветра: ${data.wind.speed} м/с`;
             weatherDescription.textContent = `${data.weather[0].description}`;
