@@ -224,6 +224,12 @@ async function getQuote() {
     figcaption.textContent = data[rand].author;
 }
 
+function ucFirst(str) {
+  if (!str) return str;
+
+  return str[0].toUpperCase() + str.slice(1);
+}
+
 //WEATHER
 async function getWeather() {
     
@@ -255,7 +261,7 @@ async function getWeather() {
             temperature.textContent = 'Температура: ' + `${data.main.temp.toFixed()}°C`;
             weatherHumidity.textContent = `Влажность: ${data.main.humidity}%`;
             weatherWind.textContent = `Скорость ветра: ${data.wind.speed} м/с`;
-            weatherDescription.textContent = `${data.weather[0].description}`;
+            weatherDescription.textContent = ucFirst(`${data.weather[0].description}`);
             temperatureSmall.textContent = `${data.main.temp}°C`;
             weatherHumiditySmall.textContent = `${data.main.humidity}%`;
             weatherWindSmall.textContent = `${data.wind.speed} m/s`;
